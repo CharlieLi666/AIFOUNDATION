@@ -34,7 +34,7 @@ int manhattan(const string& board) {
     int distance = 0;
     for (int i = 0; i < 9; ++i) {
         if (board[i] == 'x') continue;  // 空格不计算距离
-        int num = board[i] - '1';      // 将字符'1'-'8'转换为数字0-7
+        int num = board[i] - '1';      // 字符转换
         // 累加每个数字当前位置与目标位置的曼哈顿距离
         distance += abs(i / 3 - num / 3) + abs(i % 3 - num % 3);
     }
@@ -103,13 +103,13 @@ string astar(string start) {
 int main() {
     string start;
     char c;
-    // 读取输入，共9个字符（8个数字和1个'x'）
+    // 读取输入
     for (int i = 0; i < 9; ++i) {
         cin >> c;
         start += c;
     }
     
-    // 调用A*算法并输出结果
+
     cout << astar(start) << endl;
     return 0;
 }
